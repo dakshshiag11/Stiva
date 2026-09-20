@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - StudyApp</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="auth-logo">
+                👻
+            </div>
+
+            <h1>Welcome to StudyApp</h1>
+
+            <p class="auth-subtitle">
+                Your study. Your system.
+            </p>
+
+            <p class="auth-description">
+                Log in to continue your progress,
+                or create a new account to get started.
+            </p>
+
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your name"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Your password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-button">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p id="message" class="auth-message"></p>
+
+
+            <div class="auth-divider">
+                <span>New to StudyApp?</span>
+            </div>
+
+
+            <button
+                id="signupButton"
+                class="signup-button">
+                Create Account
+            </button>
+
+
+            <button
+                class="back-button"
+                onclick="location.href='index.html'">
+                ← Back
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script type="module" src="js/auth.js"></script>
+
+</body>
+
+</html>

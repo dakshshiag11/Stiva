@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyApp Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <header class="dashboard-header">
+
+        <div>
+            <h1>StudyApp</h1>
+            <p>Your study. Your system.</p>
+        </div>
+
+        <div class="account-area">
+
+    <div class="account-menu-wrapper">
+
+        <button id="accountButton">
+            👤 <span id="accountName">Account</span>
+        </button>
+
+        <div id="accountMenu" class="account-menu">
+
+            <p id="accountEmail"></p>
+
+            <button id="switchAccountButton">
+                🔄 Switch Account
+            </button>
+
+            <button id="logoutButton">
+                🚪 Log Out
+            </button>
+
+        </div>
+
+    </div>
+
+    <button id="settingsButton">
+        ⚙ Settings
+    </button>
+
+</div>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome-section">
+
+            <h2>Let's make today productive.</h2>
+
+            <p id="date"></p>
+
+        </section>
+
+
+        <!-- GOALS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>🎯 Goals</h2>
+                    <p>What do you want to achieve?</p>
+                </div>
+
+                <button id="addGoalButton">
+                    + Add Goal
+                </button>
+
+            </div>
+
+
+            <div id="goalsContainer">
+
+                <div class="empty-card">
+
+                    <h3>No goals yet</h3>
+
+                    <p>
+                        Create your first goal and start working towards it.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASKS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>✅ Tasks</h2>
+                    <p>What do you need to do?</p>
+                </div>
+
+                <button id="addTaskButton">
+                    + Add Task
+                </button>
+
+            </div>
+
+
+            <div id="tasksContainer">
+
+                <div class="empty-card">
+
+                    <h3>No tasks yet</h3>
+
+                    <p>
+                        Add tasks that move you closer to your goals.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUBJECTS + PROGRESS -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- SUBJECTS -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>📚 Subjects</h2>
+                        <p>Your custom subjects</p>
+                    </div>
+
+                    <button id="addSubjectButton">
+                        + Add
+                    </button>
+
+                </div>
+
+
+                <div id="subjectsContainer">
+
+                    <div class="empty-card">
+
+                        <p>
+                            Add your subjects to get started.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROGRESS -->
+
+            <section class="dashboard-section">
+
+                <h2>⭕ Today's Progress</h2>
+
+                <p>Complete your tasks to increase your progress.</p>
+
+
+                <div class="progress-circle">
+
+                    <span id="progressPercentage">
+                        0%
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- OPTIONAL PLANNING -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>🗓️ Day-wise Planning</h2>
+
+                    <p>
+                        Optional — plan your subjects by day.
+                    </p>
+
+                </div>
+
+                <button id="planningButton">
+                    Open Planner
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- REMINDERS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>🔔 Reminders</h2>
+
+                    <p>
+                        Get reminded about important tasks.
+                    </p>
+
+                </div>
+
+                <button id="reminderButton">
+                    Add Reminder
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUOTE -->
+
+        <section class="quote-card">
+
+            <p>
+                "Consistency beats motivation."
+            </p>
+
+        </section>
+
+
+    </main>
+
+<!-- SETTINGS PANEL -->
+
+<div id="settingsOverlay" class="settings-overlay">
+
+    <div class="settings-panel">
+
+        <div class="settings-header">
+
+            <div>
+                <h2>⚙ Settings</h2>
+                <p>Customize your StudyApp.</p>
+            </div>
+
+            <button id="closeSettingsButton" class="close-settings">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="settings-option">
+
+            <h3>🎨 Appearance</h3>
+
+            <p>
+                Choose how StudyApp looks.
+            </p>
+
+            <button id="darkModeButton">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+        <div class="settings-option">
+
+    <h3>📚 Study Mode</h3>
+
+    <p id="currentModeText">
+        Your current mode is Study.
+    </p>
+
+    <button id="changeModeButton">
+        Change Mode
+    </button>
+
+    <div id="modeSelector" class="mode-selector">
+        
+        <button data-mode="study">
+            📚 Study
+        </button>
+
+        <button data-mode="study_fitness">
+            🥊 Study + Physical Training & Martial Arts
+        </button>
+
+        <button data-mode="overall">
+            🌍 Overall Progress in Life
+        </button>
+
+        </div>
+        
+        <p id="modeComingSoonMessage" class="coming-soon-message"></p>
+
+</div>
+
+
+        <div class="settings-option">
+
+            <h3>🔔 Notifications</h3>
+
+            <p>
+                Manage reminders and notifications.
+            </p>
+
+            <button id="notificationSettingsButton">
+                Notification Settings
+            </button>
+
+        </div>
+
+
+        <button id="closeSettingsBottom" class="settings-close-button">
+            Close
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+</div>
+
+
+<!-- ADD / EDIT ITEM MODAL -->
+
+<div id="itemModal" class="item-modal">
+
+    <div class="item-modal-box">
+
+        <div class="item-modal-header">
+
+            <div>
+                <h2 id="itemModalTitle">Add Goal</h2>
+
+                <p id="itemModalDescription">
+                    What do you want to achieve?
+                </p>
+            </div>
+
+            <button
+                id="closeItemModal"
+                class="modal-close">
+                ✕
+            </button>
+
+        </div>
+
+        <input
+            type="text"
+            id="itemInput"
+            placeholder="Enter your goal..."
+            autocomplete="off"
+        >
+
+        <p
+            id="itemModalMessage"
+            class="modal-message">
+        </p>
+
+        <button
+            id="saveItemButton"
+            class="modal-save-button">
+            Add Goal
+        </button>
+
+    </div>
+
+</div>
+<!-- ITEM MODAL -->
+<div id="itemModal" class="item-modal">
+    ...
+</div>
+
+
+<!-- DELETE CONFIRMATION MODAL -->
+<div id="deleteModal" class="item-modal">
+    <div class="item-modal-box">
+
+        <div class="item-modal-header">
+            <div>
+                <h2 id="deleteModalTitle">Delete Item?</h2>
+                <p id="deleteModalDescription">
+                    Are you sure you want to delete this?
+                </p>
+            </div>
+
+            <button id="closeDeleteModal" class="modal-close">
+                ✕
+            </button>
+        </div>
+
+        <p id="deleteModalMessage" class="modal-message"></p>
+
+        <div class="delete-modal-actions">
+            <button id="cancelDeleteButton" class="cancel-delete-button">
+                Cancel
+            </button>
+
+            <button id="confirmDeleteButton" class="confirm-delete-button">
+                Delete
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+<script type="module" src="js/dashboard.js"></script>
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>
+<!-- SUBJECT MODAL -->
+
+<div id="subjectModal" class="item-modal">
+
+    <div class="item-modal-box">
+
+        <div class="item-modal-header">
+
+            <div>
+                <h2 id="subjectModalTitle">Add Subject</h2>
+                <p>Enter your subject name.</p>
+            </div>
+
+            <button id="closeSubjectModal" class="modal-close">
+                ✕
+            </button>
+
+        </div>
+
+        <input
+            type="text"
+            id="subjectInput"
+            placeholder="e.g. Mathematics"
+        >
+
+        <p id="subjectModalMessage" class="modal-message"></p>
+
+        <div class="delete-modal-actions">
+
+            <button
+                id="cancelSubjectButton"
+                class="cancel-delete-button"
+            >
+                Cancel
+            </button>
+
+            <button
+                id="saveSubjectButton"
+                class="confirm-delete-button"
+            >
+                Add Subject
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

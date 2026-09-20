@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Setup - StudyApp</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Welcome to StudyApp</h1>
+
+        <p>How do you want to use StudyApp?</p>
+
+        <div>
+
+            <button onclick="selectMode('study')">
+                📚 Study
+            </button>
+
+            <button onclick="selectMode('study_fitness')">
+                🥊 Study + Physical Training & Martial Arts
+            </button>
+
+            <button onclick="selectMode('overall')">
+                🌍 Overall Progress in Life
+            </button>
+
+        </div>
+
+        <p id="message"></p>
+
+    </main>
+
+    <script>
+
+        function selectMode(mode) {
+
+            localStorage.setItem("studyAppMode", mode);
+
+            document.getElementById("message").textContent =
+                "Mode selected!";
+
+            setTimeout(() => {
+                window.location.href = "dashboard.html";
+            }, 500);
+        }
+
+    </script>
+
+</body>
+
+</html>
